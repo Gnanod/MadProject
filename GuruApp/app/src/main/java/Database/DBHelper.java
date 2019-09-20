@@ -115,6 +115,66 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public List<ExamMarkDTO> performance(String examId,String center){
+
+        SQLiteDatabase db  = getReadableDatabase();
+
+        String [] projection ={
+
+                ExamMarks.Marks.MARK_ID,
+                ExamMarks.Marks.Student_Id,
+                ExamMarks.Marks.Exam_ID,
+                ExamMarks.Marks.Student_Marks,
+                ExamMarks.Marks.Student_Center,
+//              RANK () OVER ( ORDER BY "+ExamMarks.Marks.Student_Marks+" DESC) Ranks"
+        };
+
+
+
+        String selection =ExamMarks.Marks.Exam_ID + " = ? and "+ ExamMarks.Marks.Student_Center + " = ? ";
+
+        String []selectionArgs = {examId,center};
+
+
+        String sortOrder =ExamMarks.Marks.Student_Marks + " DESC ";
+
+        //  Cursor cursor = db.query(ExamMarks.Marks.TABLE_Name,projection ,selection,selectionArgs,null,null,sortOrder);
+        //Cursor cu = db.query("SELECT markId, studentId, examId,studentCenter,RANK() over( order by studentMarks desc) Ranks FROM Marks WHERE examId = ? and studentCenter = ?");
+        //  db.execSQL("SELECT markId, studentId, examId,studentCenter,RANK() over( order by studentMarks desc) Ranks FROM Marks WHERE examId = ? and studentCenter = ?");
+        //db.execSQL("SELECT markId, studentId, examId,studentCenter,RANK() over( order by studentMarks desc) Ranks FROM Marks WHERE examId = ? and studentCenter = ?");
+        // SELECT markId, studentId, examId,studentCenter,RANK() over( order by studentMarks desc) Ranks FROM Marks WHERE examId = ? and studentCenter = ?
+
+        Cursor cursor  = db.query(ExamMarks.Marks.TABLE_Name,projection ,selection,selectionArgs,null,null,sortOrder);
+
+        List<ExamMarkDTO> examMarksList = new ArrayList<>();
+
+        while(cursor.moveToNext()) {
+
+
+            ExamMarkDTO d = new ExamMarkDTO();
+
+            d.setStudent_Id(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Id)));
+            d.setStudent_Center(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Center)));
+            double marks = Double.parseDouble(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Marks)));
+            d.setStudent_Marks(marks);
+            d.setExam_ID(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Exam_ID)));
+            int autoId = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.MARK_ID)));
+            d.setMarkId(autoId);
+
+//            int rank = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow("Rank")));
+            // d.setRank(rank);
+
+            examMarksList.add(d);
+
+        }
+        cursor.close();
+
+
+        return examMarksList;
+
+    }
+
+
     public int deleteMarks(String deleteId) {
 
         SQLiteDatabase db = getReadableDatabase();
