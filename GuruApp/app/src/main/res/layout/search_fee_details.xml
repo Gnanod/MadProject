@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="314dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="590dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/searchfeedetails"
+        android:textAlignment="viewStart"
+        android:textColor="@color/Black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/month"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-582dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="@string/Month"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/updateAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+    <EditText
+        android:id="@+id/year"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="-98dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="@string/Year"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/studentId"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-19dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="478dp"
+        android:ems="10"
+        android:hint="@string/StudentID"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="145dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ic_rounded_corner_button"
+        android:text="Search"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="-530dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="0.373" />
+
+
+
+    <EditText
+        android:id="@+id/updateName"
+        android:layout_width="307dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="@string/StudentName"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/updateYear"
+        android:layout_width="307dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="@string/Year"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+
+    <EditText
+        android:id="@+id/updateMonth"
+        android:layout_width="302dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="@string/Month"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/updateAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+    <EditText
+        android:id="@+id/updateAmount"
+        android:layout_width="305dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="@string/Amount"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <Spinner
+        android:id="@+id/updateSpinner"
+        android:layout_width="307dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="-28dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Fee Type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/updateAmount" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_rounded_corner_button"
+        android:text="@string/Update"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="0.373" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="-51dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/ic_rounded_corner_button"
+        android:text="@string/Delete"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="0.373" />
+
+
+    <!--<TableLayout-->
+        <!--android:layout_width="340dp"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:layout_marginHorizontal="10dp"-->
+        <!--android:layout_marginVertical="30dp"-->
+
+        <!--android:background="#f1f1f1"-->
+
+
+        <!--&gt;-->
+
+        <!--<TableRow>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="StID"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Name"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Month"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Year"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Type"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Delete"-->
+                <!--android:textStyle="bold" />-->
+
+        <!--</TableRow>-->
+
+        <!--<TableRow>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="1"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Gnanod"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="100"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="G/Christ Church Boys College"-->
+                <!--android:textStyle="bold" />-->
+        <!--</TableRow>-->
+
+        <!--<TableRow>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="2"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Chathura"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="90"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginHorizontal="1dp"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="#ffffff"-->
+                <!--android:gravity="center"-->
+                <!--android:text="Richmond College"-->
+                <!--android:textStyle="bold" />-->
+        <!--</TableRow>-->
+    <!--</TableLayout>-->
+
+
+</LinearLayout>

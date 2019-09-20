@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="305dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="221dp"
+            android:layout_marginBottom="498dp"
+            android:text="@string/SearchandUpdate"
+            android:textColor="@color/Black"
+            android:textSize="80px"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <EditText
+            android:id="@+id/searchExamId"
+            android:layout_width="240dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:hint="@string/ExamId"
+            android:inputType="textPersonName"
+            android:textSize="50px" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <EditText
+            android:id="@+id/searchStudentId"
+            android:layout_width="240dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:textSize="50px"
+            android:inputType="textPersonName"
+            android:hint="@string/StudentId"
+
+            />
+        <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="113dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="-27dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="310dp"
+        android:text="@string/Search"
+        android:background="@color/btnColor"
+        />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="50px"
+        >
+
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="251dp"
+            android:text="Id"
+            android:textAlignment="textStart"
+            android:textSize="50px" />
+
+        <EditText
+            android:id="@+id/Id"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:textSize="50px"
+            android:inputType="textPersonName"
+            android:hint="Id"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="251dp"
+            android:text="@string/StudentId"
+            android:textAlignment="textStart"
+            android:textSize="50px" />
+
+        <EditText
+            android:id="@+id/updateStudentId"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:textSize="50px"
+            android:inputType="textPersonName"
+            android:hint="@string/StudentId"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="251dp"
+            android:text="@string/ExamId"
+            android:textAlignment="textStart"
+            android:textSize="50px" />
+
+        <EditText
+            android:id="@+id/updateExamId"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:textSize="50px"
+            android:inputType="textPersonName"
+            android:hint="@string/ExamId"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="251dp"
+            android:text="@string/ExamMark"
+            android:textAlignment="textStart"
+            android:textSize="50px" />
+
+        <EditText
+            android:id="@+id/updateExamMarks"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="423dp"
+            android:ems="10"
+            android:textSize="50px"
+            android:inputType="textPersonName"
+            android:hint="@string/ExamMark"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="120dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="251dp"
+            android:text="@string/Center"
+            android:textAlignment="textStart"
+            android:textSize="50px" />
+
+        <Spinner
+            android:id="@+id/updateCenterSpinner"
+            android:layout_width="213dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="64dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+
+        <Button
+            android:id="@+id/btnUpdateG"
+            android:layout_width="93dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/Update"
+            android:background="@color/btnColor"
+            />
+
+        <Button
+            android:id="@+id/btnDeleteG"
+            android:layout_width="93dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/Delete"
+            android:background="@color/btnColor"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

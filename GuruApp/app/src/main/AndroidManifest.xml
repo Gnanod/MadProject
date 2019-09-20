@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.guruapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StudentProfile"
+            android:label="@string/title_activity_student_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FeesManagement"
+            android:label="@string/title_activity_fees_management"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".Performance" /> -->
+        <!-- <activity android:name=".UserManagementHome"></activity> -->
+        <!-- <activity android:name=".SearchUpdateDeleteUser" /> -->
+        <activity
+            android:name=".UserManagement"
+            android:label="@string/title_activity_user_management"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".AddUser" /> -->
+        <!-- <activity android:name=".EditUser" /> -->
+        <!-- <activity android:name=".Performance" /> -->
+        <activity
+            android:name=".StudentActivity"
+            android:label="@string/title_activity_student"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <fragment android:name=".SearchMarks"> -->
+        <!-- </fragment> -->
+        <!-- <fragement android:name=".marks_add" > -->
+        <!-- </fragement> -->
+        <activity
+            android:name=".ExamMaksManagement"
+            android:label="@string/title_activity_exam_maks_management"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

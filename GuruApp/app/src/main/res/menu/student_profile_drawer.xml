@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_performance"
+            android:icon="@drawable/ic_performance"
+            android:title="@string/performance" />
+
+        <item
+            android:id="@+id/nav_profileDetails"
+            android:icon="@drawable/ic_student_profile_details"
+            android:title="@string/Profile" />
+
+        <item
+            android:id="@+id/nav_search_fee_details"
+            android:icon="@drawable/ic_fee_management"
+            android:title="@string/FeeDetails" />
+
+        <item
+            android:id="@+id/nav_logOut"
+            android:icon="@drawable/ic_shut_down"
+            android:title="@string/shutDown" />
+
+    </group>
+
+
+
+</menu>
