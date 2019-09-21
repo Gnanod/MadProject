@@ -152,18 +152,23 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/txtExamMarksG" />
 
+
+
+
     <Button
         android:id="@+id/btnSaveG"
-        android:layout_width="136dp"
-        android:layout_height="47dp"
+        android:layout_width="135dp"
+        android:layout_height="60dp"
         android:layout_marginStart="170dp"
         android:layout_marginTop="42dp"
         android:layout_marginEnd="106dp"
-        android:background="@color/btnColor"
-        android:text="@string/Save"
-        android:textSize="40px"
+        android:background="@drawable/ic_rounded_corner_button"
+        android:text="@string/savedetails"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtExamCenterG" />
+        app:layout_constraintTop_toBottomOf="@+id/txtExamCenterG"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

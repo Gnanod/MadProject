@@ -56,7 +56,7 @@ public class Performance extends Fragment {
 
         String [] values =
                 {"Galle","Mathara","Hambantota"};
-        Spinner spinner = (Spinner) v.findViewById(R.id.centSpinner);
+        Spinner spinner =(Spinner) v.findViewById(R.id.centSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, values);
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
