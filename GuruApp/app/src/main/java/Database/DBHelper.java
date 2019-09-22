@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.ExamMarkDTO;
+import Model.StudentDTO;
 
 public class DBHelper extends SQLiteOpenHelper {
 
 
-    private  static final String DATABASE_NAME = "GuruApp.db";
+    private  static final String DATABASE_NAME = "GuruApp2.db";
 
 
     public DBHelper(Context context) {
@@ -228,6 +229,35 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public String LoginFunction(String studentId, String nic) {
 
 
+        SQLiteDatabase db  = getReadableDatabase();
+
+        String [] projection ={
+                Student.student.COLUMN_STUDENT_NIC
+        };
+
+        String selection = Student.student.COLUMN_STUDENT_ID + " = ? and "+ Student.student.COLUMN_STUDENT_NIC + " = ?";
+
+        String []selectionArgs = {studentId,nic};
+
+        Cursor cursor = db.query(Student.student.TABLE_NAME,projection ,selection,selectionArgs,null,null,null);
+
+
+        StudentDTO s1 = new StudentDTO();
+
+        String s2 = null;
+
+        while(cursor.moveToNext()) {
+
+            s2=cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_NIC));
+
+        }
+        cursor.close();
+
+
+        return s2;
+
+    }
 }

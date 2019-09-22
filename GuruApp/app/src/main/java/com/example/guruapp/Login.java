@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.muddzdev.styleabletoast.StyleableToast;
+
 import Database.DBHelper;
 
 public class Login extends AppCompatActivity {
@@ -19,7 +21,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         userNameId= findViewById(R.id.username);
         passwordId= findViewById(R.id.password);
-
         db = new DBHelper(this);
 
     }
@@ -35,8 +36,30 @@ public class Login extends AppCompatActivity {
 
         }else{
 
-            Intent student  = new Intent(this,StudentProfile.class);
-            startActivity(student);
+            String s1 = db.LoginFunction(userName,password);
+
+            if(s1!=null){
+
+                Intent student  = new Intent(this,StudentProfile.class);
+                startActivity(student);
+                student.putExtra("studentId",s1);
+
+            }else{
+
+                StyleableToast.makeText(this, "Login Details Are Invalid",R.style.mytoast).show();
+
+            }
+
+
+
         }
+
+
+
+
+
+
+
+
     }
 }

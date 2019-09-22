@@ -115,7 +115,6 @@ public class AddFeeDetails extends Fragment {
 
                                     StyleableToast.makeText(getActivity(), "Added Fail",R.style.mytoast).show();
 
-
                                 }
 
 

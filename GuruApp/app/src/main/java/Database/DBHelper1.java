@@ -12,7 +12,7 @@ import java.util.List;
 import Model.StudentDTO;
 
 public class DBHelper1 extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "guruapp";
+    private static final String DATABASE_NAME = "GuruApp2.db";
 
     public DBHelper1(Context context){
 
@@ -66,10 +66,12 @@ public class DBHelper1 extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         String [] projection ={
+
                 Student.student.COLUMN_STUDENT_Name,
                 Student.student.COLUMN_STUDENT_NIC,
                 Student.student.COLUMN_STUDENT_PHONE,
                 Student.student.COLUMN_STUDENT_EMAIL
+
         };
 
         String selection = Student.student.COLUMN_STUDENT_ID +"= ?";

@@ -12,7 +12,7 @@ import java.util.List;
 import Model.UserDTO;
 
 public class DBHelperUser extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "guruapp.db";
+    public static final String DATABASE_NAME = "GuruApp2.db";
 
     public DBHelperUser(Context context) {
 

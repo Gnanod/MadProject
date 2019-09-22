@@ -83,30 +83,40 @@ public class new_activity_search_update_marks extends Fragment {
                 String studentId = txtStudentId.getText().toString();
                 String examId = txtExamId.getText().toString();
 
-                List<ExamMarkDTO> d1 = db.searchMarksDetails(examId,studentId);
+                if(studentId.length()!=0 && examId.length()!=0){
+                    List<ExamMarkDTO> d1 = db.searchMarksDetails(examId,studentId);
 
-                System.out.println("Null"+d1);
-                if(d1.size()==0){
+                    System.out.println("Null"+d1);
+                    if(d1.size()==0){
 
-                    StyleableToast.makeText(getActivity(), "Marks Not Found ",R.style.mytoast).show();
+                        StyleableToast.makeText(getActivity(), "Marks Not Found ",R.style.mytoast).show();
+
+                    }
+                    ExamMarkDTO searchValues = new ExamMarkDTO();
+                    for (ExamMarkDTO e: d1
+                    ) {
+
+                        searchValues.setExam_ID(e.getExam_ID());
+                        searchValues.setStudent_Marks(e.getStudent_Marks());
+                        searchValues.setStudent_Center(e.getStudent_Center());
+                        searchValues.setStudent_Id(e.getStudent_Id());
+                        searchValues.setMarkId(e.getMarkId());
+                    }
+
+                    txtupdateExamId.setText(searchValues.getExam_ID());
+                    updateStudentId.setText(searchValues.getStudent_Id());
+                    double maks = searchValues.getStudent_Marks();
+                    updateExamMarks.setText(" "+maks);
+                    id.setText(" "+searchValues.getMarkId());
+                }else{
+
+                    StyleableToast.makeText(getActivity(), "Input Fields Are Empty",R.style.mytoastSuccess).show();
+
 
                 }
-                ExamMarkDTO searchValues = new ExamMarkDTO();
-                for (ExamMarkDTO e: d1
-                ) {
 
-                    searchValues.setExam_ID(e.getExam_ID());
-                    searchValues.setStudent_Marks(e.getStudent_Marks());
-                    searchValues.setStudent_Center(e.getStudent_Center());
-                    searchValues.setStudent_Id(e.getStudent_Id());
-                    searchValues.setMarkId(e.getMarkId());
-                }
 
-                txtupdateExamId.setText(searchValues.getExam_ID());
-                updateStudentId.setText(searchValues.getStudent_Id());
-                double maks = searchValues.getStudent_Marks();
-                updateExamMarks.setText(" "+maks);
-                id.setText(" "+searchValues.getMarkId());
+
 
 
             }
