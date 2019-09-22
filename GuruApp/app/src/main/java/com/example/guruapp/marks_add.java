@@ -101,6 +101,7 @@ public class marks_add extends Fragment {
                                 if(i){
 
                                     StyleableToast.makeText(getActivity(), "Marks Added SuccessFully",R.style.mytoastSuccess).show();
+
                                     txtExamId.setText(" ");
                                     txtMarks.setText(" ");
                                     txtStudentId.setText(" ");

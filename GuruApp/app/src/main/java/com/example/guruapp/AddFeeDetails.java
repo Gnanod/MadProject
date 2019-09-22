@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.muddzdev.styleabletoast.StyleableToast;
+
 import Database.DBHandlerFeeManagement;
 import Model.ExamMarkDTO;
 import Model.FeeDTO;
@@ -91,12 +93,6 @@ public class AddFeeDetails extends Fragment {
                 yearUI = year.getText().toString();
 
 
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+ userIDUI);
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+userNameUI);
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+monthUI);
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+amountUI);
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+yearUI);
-                System.out.println("GGGGGGGGGGGGGGGGGGGGG");
 
                 if(userNameUI.length() != 0){
                     if(userNameUI.length() != 0){
@@ -112,16 +108,30 @@ public class AddFeeDetails extends Fragment {
                                 dto.setType(type);
 
                                 boolean f =db.SaveFeeDetails(dto);
-                                Toast.makeText(getActivity(),"Added Successfully",Toast.LENGTH_LONG).show();
+                                if(f){
+                                    StyleableToast.makeText(getActivity(), " Added SuccessFully",R.style.mytoastSuccess).show();
+
+                                }else{
+
+                                    StyleableToast.makeText(getActivity(), "Added Fail",R.style.mytoast).show();
+
+
+                                }
+
+
                             }
                             else{
-                                Toast.makeText(getActivity(),"Empty Name",Toast.LENGTH_LONG).show();
+
+                                StyleableToast.makeText(getActivity(), "Empty Name",R.style.mytoast).show();
+
                             }
                         }else{
-                            Toast.makeText(getActivity(),"Empty month",Toast.LENGTH_LONG).show();
+                            StyleableToast.makeText(getActivity(), "Empty month",R.style.mytoast).show();
+
                         }
                     }else{
-                        Toast.makeText(getActivity(),"Empty amount",Toast.LENGTH_LONG).show();
+                        StyleableToast.makeText(getActivity(), "Empty amount",R.style.mytoast).show();
+
                     }
                 }
             }
