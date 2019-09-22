@@ -95,4 +95,12 @@
     <string name="buttondelete">DELETE</string>
     <string name="searchdeleteupdateuser">SEARCH UPDATE DELETE USER</string>
     <string name="EditText2">Year</string>
+
+
+    <string name="stNic">Student NIC</string>
+    <string name="ser">Search</string>
+    <string name="nic1">Student NIC</string>
+    <string name="del">Delete</string>
+
+
 </resources>

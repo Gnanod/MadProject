@@ -2,22 +2,21 @@ package Database;
 
 import android.provider.BaseColumns;
 
-public class Student {
+import android.provider.BaseColumns;
 
-    public Student() {
+public final class Student {
 
-    }
-
-    public  static class StudentAtt implements BaseColumns {
-
-        protected static final String Table_Name = "StudentTable";
-
-        protected static final String Student_Id="StudentId";
-        protected static final String Student_Name="StudentName";
-        protected static final String Student_Marks="StudentMarks";
-        protected static final String address="StudentAddress";
-
+    private Student(){
 
     }
 
+    public static class student implements BaseColumns{
+        public static final String TABLE_NAME = "student";
+        public static final String COLUMN_STUDENT_ID = "studentId";
+        public static final String COLUMN_STUDENT_Name = "studentName";
+        public static final String COLUMN_STUDENT_NIC= "studentNIC";
+        public static final String COLUMN_STUDENT_PHONE = "studentPhone";
+        public static final String COLUMN_STUDENT_EMAIL = "studentEmail";
+    }
 }
+
