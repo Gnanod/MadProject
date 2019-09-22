@@ -89,7 +89,14 @@ public class AddFeeDetails extends Fragment {
                 monthUI = month.getText().toString();
                 amountUI = amount.getText().toString();
                 yearUI = year.getText().toString();
-                //spinnerUI = spinner1.getTe
+
+
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+ userIDUI);
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+userNameUI);
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+monthUI);
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+amountUI);
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG"+yearUI);
+                System.out.println("GGGGGGGGGGGGGGGGGGGGG");
 
                 if(userNameUI.length() != 0){
                     if(userNameUI.length() != 0){

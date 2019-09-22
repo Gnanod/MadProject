@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +64,9 @@ public class DBHandlerFeeManagement extends SQLiteOpenHelper {
     }
 
     public List<FeeDTO> searchFeeDetails(String studentid, String month, String year) {
+
+
+        System.out.println("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGJJJJJJJJJJJJJJJKKKKKKKKKKKKKKKKKKK");
         SQLiteDatabase db  = getReadableDatabase();
 
         String [] projection ={
@@ -80,14 +84,12 @@ public class DBHandlerFeeManagement extends SQLiteOpenHelper {
 
         Cursor cursor = db.query(Fee.FeeDetail.TABLE_NAME,projection ,selection,selectionArgs,null,null,null);
 
-
         List<FeeDTO> feeDetailList = new ArrayList<>();
 
 
         while(cursor.moveToNext()) {
 
             FeeDTO d = new FeeDTO();
-
             d.setStudentName(cursor.getString(cursor.getColumnIndexOrThrow(Fee.FeeDetail.COLUMN_NAME_STUDENTNAME)));
             int y = Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(Fee.FeeDetail.COLUMN_NAME_YEAR)));
             d.setYear(y);
@@ -95,6 +97,8 @@ public class DBHandlerFeeManagement extends SQLiteOpenHelper {
             double amt = Double.parseDouble(cursor.getString(cursor.getColumnIndexOrThrow(Fee.FeeDetail.COLUMN_NAME_AMOUNT)));
             d.setAmount(amt);
             d.setType(cursor.getString(cursor.getColumnIndexOrThrow(Fee.FeeDetail.COLUMN_NAME_TYPE)));
+            d.setStudentId(studentid);
+
 
 
             feeDetailList.add(d);
@@ -113,6 +117,7 @@ public class DBHandlerFeeManagement extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 
+        values.put(Fee.FeeDetail.COLUMN_NAME_STUDENTID,fees.getStudentId());
         values.put(Fee.FeeDetail.COLUMN_NAME_STUDENTNAME,fees.getStudentName());
         values.put(Fee.FeeDetail.COLUMN_NAME_YEAR,fees.getYear());
         values.put(Fee.FeeDetail.COLUMN_NAME_MONTH,fees.getMonth());

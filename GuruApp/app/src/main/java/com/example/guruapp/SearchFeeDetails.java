@@ -28,6 +28,7 @@ public class SearchFeeDetails extends Fragment {
     DBHandlerFeeManagement db;
     Spinner spinner2;
     String spinnerType;
+    String sId;
 
     @Nullable
     @Override
@@ -79,70 +80,84 @@ public class SearchFeeDetails extends Fragment {
                 String month = searchMonth.getText().toString();
                 String year = searchYear.getText().toString();
 
+                System.out.println("");
+
                 List<FeeDTO> l1 = db.searchFeeDetails(studentid,month,year);
 
-                if(l1 ==null){
+                System.out.println("KKKKKKKKKKKKKKKKKFFFFFFFFFFFFFFFFFFFFFFFFFFF"+l1);
+
+                if(l1.size()==0){
+
                     Toast.makeText(getActivity(), "Not found", Toast.LENGTH_SHORT).show();
-                }
 
-                FeeDTO SearchValues = new FeeDTO();
-                for (FeeDTO e: l1){
-
-                    SearchValues.setStudentId(e.getStudentId());
-                    SearchValues.setStudentName(e.getStudentName());
-                    SearchValues.setMonth(e.getMonth());
-                    SearchValues.setAmount(e.getAmount());
-                    SearchValues.setType(e.getType());
-                }
+                }else {
 
 
-                UpStName.setText(SearchValues.getStudentName());
-                int y = SearchValues.getYear();
-                UpYear.setText(" " + y );
-                UpMonth.setText(SearchValues.getMonth());
-                double amount = SearchValues.getAmount();
-                UpAmount.setText(" " + amount);
-//                UpType.setText(SearchValues.getType());
+                    FeeDTO SearchValues = new FeeDTO();
+                    for (FeeDTO e : l1) {
 
+                        SearchValues.setStudentId(e.getStudentId());
+                        SearchValues.setStudentName(e.getStudentName());
+                        SearchValues.setMonth(e.getMonth());
+                        SearchValues.setAmount(e.getAmount());
+                        SearchValues.setType(e.getType());
+                        SearchValues.setYear(e.getYear());
 
-                String []values=new String[3];
-                System.out.println("searchValues.getStudent_Center()"+SearchValues.getType());
-                if(SearchValues.getType()==null){
-                    values[0]="Full";
-                    values[1]="Half";
-                    values[2]="Free";
-                }else{
+                        sId= e.getStudentId();
 
-                    if(SearchValues.getType().equals("Full")){
+                        System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFIUUUUUUUUUU"+sId);
 
-                        values[0]="Full";
-                        values[1]="Half";
-                        values[2]="Free";
-                    }
-
-                    if(SearchValues.getType().equals("Half")){
-
-                        values[0]="Half";
-                        values[1]="Full";
-                        values[2]="Free";
-                    }
-
-                    if(SearchValues.getType().equals("Free")){
-
-                        values[0]="Free";
-                        values[1]="Full";
-                        values[2]="Half";
                     }
 
 
+                    UpStName.setText(SearchValues.getStudentName());
+                    int y = SearchValues.getYear();
+                    UpYear.setText(Integer.toString(y));
+                    UpMonth.setText(SearchValues.getMonth());
+                    double amount = SearchValues.getAmount();
+                    UpAmount.setText(Double.toString(amount));
+
+
+
+                    String[] values = new String[3];
+                    System.out.println("searchValues.getStudent_Center()" + SearchValues.getType());
+                    if (SearchValues.getType() == null) {
+                        values[0] = "Full";
+                        values[1] = "Half";
+                        values[2] = "Free";
+                    } else {
+
+                        if (SearchValues.getType().equals("Full")) {
+
+                            values[0] = "Full";
+                            values[1] = "Half";
+                            values[2] = "Free";
+                        }
+
+                        if (SearchValues.getType().equals("Half")) {
+
+                            values[0] = "Half";
+                            values[1] = "Full";
+                            values[2] = "Free";
+                        }
+
+                        if (SearchValues.getType().equals("Free")) {
+
+                            values[0] = "Free";
+                            values[1] = "Full";
+                            values[2] = "Half";
+                        }
+
+
+                    }
+
+
+                    ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, values);
+                    adapter1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+                    spinner2.setAdapter(adapter1);
+
 
                 }
-
-
-
-                ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, values);
-                adapter1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-                spinner2.setAdapter(adapter1);
             }
         });
 
@@ -152,7 +167,7 @@ public class SearchFeeDetails extends Fragment {
             @Override
             public void onClick(View view) {
 
-                String UpdateStName = UpStName.getText().toString();
+                    String UpdateStName = UpStName.getText().toString();
                     String UpdateYear = UpYear.getText().toString();
                     String UpdateMonth = UpMonth.getText().toString();
                     String UpdateAmount = UpMonth.getText().toString();
@@ -163,6 +178,8 @@ public class SearchFeeDetails extends Fragment {
                     f.setMonth(UpdateMonth);
                     f.setAmount(Double.parseDouble(UpdateAmount));
                     f.setType(spinnerType);
+                    f.setStudentId(sId);
+
 
                     boolean status =  db.updateFeeDetails(f);
 
@@ -183,22 +200,24 @@ public class SearchFeeDetails extends Fragment {
 
 
 
-//        btnDelete.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String deleteId =
-//                int result = db.deleteFeeDetails(studentID.getText().toString());
-//
-//                if(result == 1){
-//                    Toast.makeText(getActivity(),"Deleting Success",Toast.LENGTH_LONG).show();
-//
-//                }else{
-//                    Toast.makeText(getActivity(),"Deleting  false",Toast.LENGTH_LONG).show();
-//
-//                }
-//
-//            }
-//        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int result = db.deleteFeeDetails(studentID.getText().toString());
+
+                if(result == 1){
+
+                    Toast.makeText(getActivity(),"Deleting Success",Toast.LENGTH_LONG).show();
+
+                }else{
+
+                    Toast.makeText(getActivity(),"Deleting  false",Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+        });
 
 
         return v;
