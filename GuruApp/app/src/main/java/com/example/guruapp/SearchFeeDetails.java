@@ -88,7 +88,9 @@ public class SearchFeeDetails extends Fragment {
 
                 if(l1.size()==0){
 
-                    Toast.makeText(getActivity(), "Not found", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getActivity(), "Not found", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), " Not Found",R.style.mytoast).show();
+
 
                 }else {
 
@@ -170,28 +172,76 @@ public class SearchFeeDetails extends Fragment {
                     String UpdateStName = UpStName.getText().toString();
                     String UpdateYear = UpYear.getText().toString();
                     String UpdateMonth = UpMonth.getText().toString();
-                    String UpdateAmount = UpMonth.getText().toString();
+                    String UpdateAmount = UpAmount.getText().toString();
 
-                    FeeDTO f = new FeeDTO();
-                    f.setStudentName(UpdateStName);
-                    f.setYear(Integer.parseInt(UpdateYear));
-                    f.setMonth(UpdateMonth);
-                    f.setAmount(Double.parseDouble(UpdateAmount));
-                    f.setType(spinnerType);
-                    f.setStudentId(sId);
+//                    FeeDTO f = new FeeDTO();
+//                    f.setStudentName(UpdateStName);
+//                    f.setYear(Integer.parseInt(UpdateYear));
+//                    f.setMonth(UpdateMonth);
+//                    f.setAmount(Double.parseDouble(UpdateAmount));
+//                    f.setType(spinnerType);
+//                    f.setStudentId(sId);
+//
+//
+//                    boolean status =  db.updateFeeDetails(f);
+//
+//                    if(status){
+//                        //Toast.makeText(getActivity(),"Update Success",Toast.LENGTH_LONG).show();
+//                        StyleableToast.makeText(getActivity(), "Updated SuccessFully",R.style.mytoast).show();
+//
+//                    }else{
+//
+//                        //Toast.makeText(getActivity(),"Update Fail",Toast.LENGTH_LONG).show();
+//                        StyleableToast.makeText(getActivity(), " Updated Fail",R.style.mytoast).show();
+//                    }
 
 
-                    boolean status =  db.updateFeeDetails(f);
+                    if (UpdateStName.length() != 0) {
+                        if (UpdateYear.length() != 0) {
+                            if (UpdateYear.length() == 4) {
+                                if (UpdateMonth.length() != 0) {
+                                    if (UpdateAmount.length() != 0) {
+                                        if (spinnerType.length() != 0) {
 
-                    if(status){
-                        Toast.makeText(getActivity(),"Update Success",Toast.LENGTH_LONG).show();
+                                            FeeDTO f = new FeeDTO();
+                                            f.setStudentName(UpdateStName);
+                                            f.setYear(Integer.parseInt(UpdateYear));
+                                            f.setMonth(UpdateMonth);
+                                            f.setAmount(Double.parseDouble(UpdateAmount));
+                                            f.setType(spinnerType);
+                                            f.setStudentId(sId);
 
-                    }else{
 
-                        Toast.makeText(getActivity(),"Update Fail",Toast.LENGTH_LONG).show();
+                                            boolean status =  db.updateFeeDetails(f);
 
+                                            if(status){
+                                                //Toast.makeText(getActivity(),"Update Success",Toast.LENGTH_LONG).show();
+                                                StyleableToast.makeText(getActivity(), "Updated SuccessFully",R.style.mytoast).show();
 
+                                            }else{
+
+                                                //Toast.makeText(getActivity(),"Update Fail",Toast.LENGTH_LONG).show();
+                                                StyleableToast.makeText(getActivity(), " Updated Fail",R.style.mytoast).show();
+                                            }
+                                        } else {
+                                            StyleableToast.makeText(getActivity(), "Empty Type", R.style.mytoast).show();
+                                        }
+                                    } else {
+                                        StyleableToast.makeText(getActivity(), "Empty Amount", R.style.mytoast).show();
+                                    }
+                                } else {
+                                    StyleableToast.makeText(getActivity(), "Empty Month", R.style.mytoast).show();
+                                }
+                            } else {
+                                StyleableToast.makeText(getActivity(), "Please enter a valid Year", R.style.mytoast).show();
+                            }
+                        } else {
+                            StyleableToast.makeText(getActivity(), "Empty Year", R.style.mytoast).show();
+                        }
+                    } else {
+                        StyleableToast.makeText(getActivity(), "Empty Name", R.style.mytoast).show();
                     }
+
 
                 }
 
@@ -208,11 +258,13 @@ public class SearchFeeDetails extends Fragment {
 
                 if(result == 1){
 
-                    Toast.makeText(getActivity(),"Deleting Success",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity(),"Deleting Success",Toast.LENGTH_LONG).show();
+                    StyleableToast.makeText(getActivity(), " Deleted SuccessFully",R.style.mytoast).show();
 
                 }else{
 
-                    Toast.makeText(getActivity(),"Deleting  false",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity(),"Deleting  false",Toast.LENGTH_LONG).show();
+                    StyleableToast.makeText(getActivity(), " Deleted Fail",R.style.mytoast).show();
 
                 }
 

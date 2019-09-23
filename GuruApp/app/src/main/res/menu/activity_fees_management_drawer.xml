@@ -16,10 +16,10 @@
             android:id="@+id/nav_search_fee_details"
             android:icon="@drawable/ic_search_marks"
             android:title="@string/SearchFeeDetails" />
-        <item
-            android:id="@+id/nav_update_fee_details"
-            android:icon="@drawable/ic_performance"
-            android:title="@string/UpdateFeeDetails" />
+        <!--<item-->
+            <!--android:id="@+id/nav_update_fee_details"-->
+            <!--android:icon="@drawable/ic_performance"-->
+            <!--android:title="@string/UpdateFeeDetails" />-->
         <item
             android:id="@+id/nav_logOut"
             android:icon="@drawable/ic_shut_down"

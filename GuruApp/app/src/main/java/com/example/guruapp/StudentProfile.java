@@ -113,7 +113,7 @@ public class StudentProfile extends AppCompatActivity
 
         }else if(id == R.id.nav_search_fee_details){
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails,new SearchFeeDetails()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails,new Student_fee_details()).commit();
 
         }else if(id == R.id.nav_logOut){
 
