@@ -76,11 +76,17 @@
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+
         android:background="@drawable/ic_rounded_corner_button"
-        android:text="Search"
+
         android:textColor="@android:color/black"
+
+        android:drawableStart="@drawable/searchtn"
+        android:paddingStart="20dp"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+
+
         android:layout_marginStart="200dp"
         android:layout_marginTop="-530dp"
         android:layout_marginEnd="30dp"
