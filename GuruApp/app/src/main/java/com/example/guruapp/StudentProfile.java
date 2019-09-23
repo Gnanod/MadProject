@@ -25,6 +25,9 @@ import android.view.Menu;
 public class StudentProfile extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    String studentId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,11 @@ public class StudentProfile extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Intent intent = getIntent();
+         studentId = intent.getStringExtra("studentId");
+        System.out.println("HHHHHH"+studentId);
     }
 
     @Override
@@ -97,13 +105,14 @@ public class StudentProfile extends AppCompatActivity
 
         }else if(id == R.id.nav_profileDetails){
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails, new ViewStudentProfile()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails, new ViewStudentProfile(studentId)).commit();
 
         }else if(id == R.id.nav_search_fee_details){
 
             getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails,new Student_fee_details()).commit();
 
         }else if(id == R.id.nav_logOut){
+
             Intent login = new Intent(this, Login.class);
             startActivity(login);
         }
@@ -111,5 +120,6 @@ public class StudentProfile extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 }

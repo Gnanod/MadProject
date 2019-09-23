@@ -129,11 +129,15 @@
         <EditText
             android:id="@+id/AddPasswordH"
             android:layout_width="250dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="16dp"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:selectAllOnFocus="true"
+            android:inputType="textPassword"
+            android:textColor="@color/Black"
+            android:textSize="15dp"
+            android:hint="Password"/>
 
         <Button
             android:id="@+id/AddBtH"
@@ -141,7 +145,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:background="@color/btnColor"
+            android:background="@drawable/ic_rounded_corner_button"
             android:text="@string/buttonadd"
             android:textStyle="bold" />
     </LinearLayout>

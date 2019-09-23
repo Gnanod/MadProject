@@ -51,10 +51,9 @@ public class new_activity_search_update_marks extends Fragment {
         btnSearch = v.findViewById(R.id.btnSearch);
         btnDeleteG = v.findViewById(R.id.btnDeleteG);
         btnUpdateG = v.findViewById(R.id.btnUpdateG);
+
+
         id = v.findViewById(R.id.Id);
-
-
-
         txtupdateExamId = v.findViewById(R.id.updateExamId);
         updateStudentId = v.findViewById(R.id.updateStudentId);
         updateExamMarks = v.findViewById(R.id.updateExamMarks);
@@ -83,30 +82,40 @@ public class new_activity_search_update_marks extends Fragment {
                 String studentId = txtStudentId.getText().toString();
                 String examId = txtExamId.getText().toString();
 
-                List<ExamMarkDTO> d1 = db.searchMarksDetails(examId,studentId);
+                if(studentId.length()!=0 && examId.length()!=0){
+                    List<ExamMarkDTO> d1 = db.searchMarksDetails(examId,studentId);
 
-                System.out.println("Null"+d1);
-                if(d1.size()==0){
+                    System.out.println("Null"+d1);
+                    if(d1.size()==0){
 
-                    StyleableToast.makeText(getActivity(), "Marks Not Found ",R.style.mytoast).show();
+                        StyleableToast.makeText(getActivity(), "Marks Not Found ",R.style.mytoast).show();
+
+                    }
+                    ExamMarkDTO searchValues = new ExamMarkDTO();
+                    for (ExamMarkDTO e: d1
+                    ) {
+
+                        searchValues.setExam_ID(e.getExam_ID());
+                        searchValues.setStudent_Marks(e.getStudent_Marks());
+                        searchValues.setStudent_Center(e.getStudent_Center());
+                        searchValues.setStudent_Id(e.getStudent_Id());
+                        searchValues.setMarkId(e.getMarkId());
+                    }
+
+                    txtupdateExamId.setText(searchValues.getExam_ID());
+                    updateStudentId.setText(searchValues.getStudent_Id());
+                    double maks = searchValues.getStudent_Marks();
+                    updateExamMarks.setText(" "+maks);
+                    id.setText(" "+searchValues.getMarkId());
+                }else{
+
+                    StyleableToast.makeText(getActivity(), "Input Fields Are Empty",R.style.mytoastSuccess).show();
+
 
                 }
-                ExamMarkDTO searchValues = new ExamMarkDTO();
-                for (ExamMarkDTO e: d1
-                ) {
 
-                    searchValues.setExam_ID(e.getExam_ID());
-                    searchValues.setStudent_Marks(e.getStudent_Marks());
-                    searchValues.setStudent_Center(e.getStudent_Center());
-                    searchValues.setStudent_Id(e.getStudent_Id());
-                    searchValues.setMarkId(e.getMarkId());
-                }
 
-                txtupdateExamId.setText(searchValues.getExam_ID());
-                updateStudentId.setText(searchValues.getStudent_Id());
-                double maks = searchValues.getStudent_Marks();
-                updateExamMarks.setText(" "+maks);
-                id.setText(" "+searchValues.getMarkId());
+
 
 
             }
@@ -136,6 +145,13 @@ public class new_activity_search_update_marks extends Fragment {
 
                    StyleableToast.makeText(getActivity(), "Deleted  SuccessFully",R.style.mytoastSuccess).show();
 
+                   id.setText(" ");
+                   txtupdateExamId.setText(" ");
+                   updateStudentId.setText(" ");
+                   updateExamMarks.setText(" ");
+
+
+
                }else{
 
                    StyleableToast.makeText(getActivity(), "Deleted  Fail",R.style.mytoastSuccess).show();
@@ -158,21 +174,27 @@ public class new_activity_search_update_marks extends Fragment {
            public void onClick(View view) {
 
               String updateId = idTextObject.getText().toString();
-              String updateStudentId = updateStudentIdObject.getText().toString();
+              String updateStudentIds = updateStudentIdObject.getText().toString();
               String updateExamId = updateExamIdObject.getText().toString();
-              String updateExamMarks = updateExamMarksObject.getText().toString();
+              String updateExamMarkss = updateExamMarksObject.getText().toString();
 
               ExamMarkDTO e = new ExamMarkDTO();
               e.setMarkId(Integer.parseInt(updateId.trim()));
-              e.setStudent_Id(updateStudentId);
+              e.setStudent_Id(updateStudentIds);
               e.setExam_ID(updateExamId);
-              e.setStudent_Marks(Double.parseDouble(updateExamMarks));
+              e.setStudent_Marks(Double.parseDouble(updateExamMarkss));
 
               boolean i = db.updateMarks(e);
 
               if(i){
 
                   StyleableToast.makeText(getActivity(), "Updated  SuccessFully",R.style.mytoastSuccess).show();
+
+                  id.setText(" ");
+                  txtupdateExamId.setText(" ");
+                  updateStudentId.setText(" ");
+                  updateExamMarks.setText(" ");
+
 
               }else{
 

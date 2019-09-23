@@ -12,7 +12,7 @@ import java.util.List;
 import Model.StudentDTO;
 
 public class DBHelper1 extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "guruapp";
+    private static final String DATABASE_NAME = "GuruApp3.db";
 
     public DBHelper1(Context context){
 
@@ -66,10 +66,12 @@ public class DBHelper1 extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
 
         String [] projection ={
+
                 Student.student.COLUMN_STUDENT_Name,
                 Student.student.COLUMN_STUDENT_NIC,
                 Student.student.COLUMN_STUDENT_PHONE,
                 Student.student.COLUMN_STUDENT_EMAIL
+
         };
 
         String selection = Student.student.COLUMN_STUDENT_ID +"= ?";
@@ -138,5 +140,42 @@ public class DBHelper1 extends SQLiteOpenHelper {
         }else{
             return -1;
         }
+    }
+
+    public List<StudentDTO> getDetails(String studentId) {
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String[] projection={
+                Student.student.COLUMN_STUDENT_NIC,
+                Student.student.COLUMN_STUDENT_ID,
+                Student.student.COLUMN_STUDENT_Name,
+                Student.student.COLUMN_STUDENT_PHONE,
+                Student.student.COLUMN_STUDENT_EMAIL
+        };
+
+        String selection = Student.student.COLUMN_STUDENT_NIC + "  = ?";
+
+        String []selectionArgs = {studentId};
+
+        Cursor cursor = db.query(Student.student.TABLE_NAME,projection,selection,selectionArgs,null,null,null);
+
+        List<StudentDTO>stuList = new ArrayList<>();
+
+        while (cursor.moveToNext()){
+            StudentDTO d = new StudentDTO();
+
+            d.setStudentNic(cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_NIC)));
+            d.setStudentId(cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_ID)));
+            d.setStudentName(cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_Name)));
+            d.setStudentPhone(cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_PHONE)));
+            d.setStudentEmail(cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_EMAIL)));
+
+            stuList.add(d);
+        }
+        cursor.close();
+
+        return stuList;
+
     }
 }

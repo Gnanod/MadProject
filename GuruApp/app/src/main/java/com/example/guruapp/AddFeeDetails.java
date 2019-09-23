@@ -120,6 +120,28 @@ public class AddFeeDetails extends Fragment {
                                     }
                                 } else {
                                     StyleableToast.makeText(getActivity(), "Empty Amount", R.style.mytoast).show();
+
+                if(userNameUI.length() != 0){
+                    if(userNameUI.length() != 0){
+                        if(monthUI.length() != 0){
+                            if(amountUI.length() != 0){
+
+                                FeeDTO dto = new FeeDTO();
+                                dto.setStudentId(userIDUI);
+                                dto.setStudentName(userNameUI);
+                                dto.setYear(Integer.parseInt(yearUI));
+                                dto.setAmount(Double.parseDouble(amountUI));
+                                dto.setMonth(monthUI);
+                                dto.setType(type);
+
+                                boolean f =db.SaveFeeDetails(dto);
+                                if(f){
+                                    StyleableToast.makeText(getActivity(), " Added SuccessFully",R.style.mytoastSuccess).show();
+
+                                }else{
+
+                                    StyleableToast.makeText(getActivity(), "Added Fail",R.style.mytoast).show();
+
                                 }
                             } else {
                                 StyleableToast.makeText(getActivity(), "Empty Month", R.style.mytoast).show();

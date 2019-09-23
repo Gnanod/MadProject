@@ -63,17 +63,20 @@
             android:hint="@string/StudentId"
 
             />
+
         <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="113dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="-27dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="310dp"
-        android:text="@string/Search"
-        android:background="@color/btnColor"
-        />
+            android:id="@+id/btnSearch"
+            android:layout_width="47dp"
+            android:layout_height="52dp"
+
+            android:layout_marginStart="-27dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginBottom="310dp"
+            android:background="@drawable/ic_rounded_corner_button"
+            android:drawableEnd="@drawable/ic_search_marks"
+
+            />
 
 
 
@@ -243,32 +246,38 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp">
+        android:layout_height="114dp">
 
 
         <Button
             android:id="@+id/btnUpdateG"
-            android:layout_width="93dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="161dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="135dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="26dp"
             android:layout_marginBottom="4dp"
-            android:text="@string/Update"
-            android:background="@color/btnColor"
+            android:background="@drawable/ic_rounded_corner_button"
+            android:text="@string/update"
+            android:textColor="@android:color/black"
+
             />
+
 
         <Button
             android:id="@+id/btnDeleteG"
-            android:layout_width="93dp"
-            android:layout_height="41dp"
+            android:layout_width="135dp"
+            android:layout_height="60dp"
             android:layout_marginStart="-10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="42dp"
             android:layout_marginBottom="4dp"
+            android:background="@drawable/ic_rounded_corner_button"
             android:text="@string/Delete"
-            android:background="@color/btnColor"
+            android:textColor="@android:color/black"
+
             />
+
 
     </LinearLayout>
 

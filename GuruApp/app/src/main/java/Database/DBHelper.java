@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.ExamMarkDTO;
+import Model.StudentDTO;
 
 public class DBHelper extends SQLiteOpenHelper {
 
 
-    private  static final String DATABASE_NAME = "GuruApp.db";
+    private  static final String DATABASE_NAME = "GuruApp3.db";
 
 
     public DBHelper(Context context) {
@@ -24,7 +25,6 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
 
     }
-
 
 
     @Override
@@ -38,8 +38,38 @@ public class DBHelper extends SQLiteOpenHelper {
                 ExamMarks.Marks.Student_Center+" Text,"+
                 ExamMarks.Marks.Student_Marks+" Real)";
 
-        sqLiteDatabase.execSQL(CreateExamMarksTableSQL);
 
+        String SQL_CREATE_ENTRIES =
+                "CREATE TABLE " + Fee.FeeDetail.TABLE_NAME + " ("+
+                        Fee.FeeDetail.COLUMN_NAME_STUDENTID + " Text PRIMARY KEY," +
+                        Fee.FeeDetail.COLUMN_NAME_STUDENTNAME + " Text," +
+                        Fee.FeeDetail.COLUMN_NAME_YEAR + " INTEGER," +
+                        Fee.FeeDetail.COLUMN_NAME_MONTH + " Text," +
+                        Fee.FeeDetail.COLUMN_NAME_AMOUNT + " Real," +
+                        Fee.FeeDetail.COLUMN_NAME_TYPE + " Text)";
+
+        String sqlCreateTable = "CREATE TABLE "+UserMaster.users.TABLE_NAME+" ("+
+                UserMaster.users._ID+" TEXT PRIMARY KEY,"+
+                UserMaster.users.COLUMN_NAME+ " TEXT,"+
+                UserMaster.users.COLUMN_PHONE+ " TEXT," +
+                UserMaster.users.COLUMN_MAIL+ " TEXT," +
+                UserMaster.users.COLUMN_SUBJECT+ " TEXT," +
+                UserMaster.users.COLUMN_PASSWORD+" TEXT)";
+
+
+        String sqlCreateTable1 = "CREATE TABLE "+Student.student.TABLE_NAME+" ("+
+                Student.student.COLUMN_STUDENT_ID+ " TEXT,"+
+                Student.student.COLUMN_STUDENT_Name+ " TEXT,"+
+                Student.student.COLUMN_STUDENT_NIC+ " TEXT," +
+                Student.student.COLUMN_STUDENT_PHONE+ " TEXT," +
+                Student.student.COLUMN_STUDENT_EMAIL+" TEXT)";
+
+
+
+        sqLiteDatabase.execSQL(CreateExamMarksTableSQL);
+        sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+        sqLiteDatabase.execSQL(sqlCreateTable);
+        sqLiteDatabase.execSQL(sqlCreateTable1);
 
     }
 
@@ -228,6 +258,35 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public String LoginFunction(String studentId, String nic) {
 
 
+        SQLiteDatabase db  = getReadableDatabase();
+
+        String [] projection ={
+                Student.student.COLUMN_STUDENT_NIC
+        };
+
+        String selection = Student.student.COLUMN_STUDENT_ID + " = ? and "+ Student.student.COLUMN_STUDENT_NIC + " = ?";
+
+        String []selectionArgs = {studentId,nic};
+
+        Cursor cursor = db.query(Student.student.TABLE_NAME,projection ,selection,selectionArgs,null,null,null);
+
+
+        StudentDTO s1 = new StudentDTO();
+
+        String s2 = null;
+
+        while(cursor.moveToNext()) {
+
+            s2=cursor.getString(cursor.getColumnIndexOrThrow(Student.student.COLUMN_STUDENT_NIC));
+
+        }
+        cursor.close();
+
+
+        return s2;
+
+    }
 }

@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.muddzdev.styleabletoast.StyleableToast;
+
 import java.util.List;
 
 import Database.DBHelperUser;
@@ -60,7 +62,7 @@ public class SearchUpdateDeleteUser extends Fragment {
                 List<UserDTO> Ld = db.searchUser(id);
                 
                 if(Ld.size()==0){
-                    Toast.makeText(getActivity(), "Not Found", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), "Not Found",R.style.mytoast).show();
                 }else{
                     UserDTO values = new UserDTO();
 
@@ -113,9 +115,9 @@ public class SearchUpdateDeleteUser extends Fragment {
                 boolean res = db.updateUser(udto);
 
                 if (res){
-                    Toast.makeText(getActivity(), "Successfully Updated", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), "Updated SuccessFully",R.style.mytoastSuccess).show();
                 }else {
-                    Toast.makeText(getActivity(), "Updated Fail", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), "Updated Fail",R.style.mytoast).show();
                 }
             }
         });
@@ -130,9 +132,9 @@ public class SearchUpdateDeleteUser extends Fragment {
                 boolean res = db.deleteUser(delID);
 
                 if (res){
-                    Toast.makeText(getActivity(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), "Deleted SuccessFully",R.style.mytoastSuccess).show();
                 }else {
-                    Toast.makeText(getActivity(), "Deleted Fail", Toast.LENGTH_SHORT).show();
+                    StyleableToast.makeText(getActivity(), "Deleted Fail",R.style.mytoast).show();
                 }
 
             }
