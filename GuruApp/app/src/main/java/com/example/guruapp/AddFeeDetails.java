@@ -93,49 +93,51 @@ public class AddFeeDetails extends Fragment {
                 yearUI = year.getText().toString();
 
 
+            if(userID.length() != 0) {
+                if (userNameUI.length() != 0) {
+                    if (yearUI.length() != 0) {
+                        if (yearUI.length() == 4) {
+                            if (monthUI.length() != 0) {
+                                if (amountUI.length() != 0) {
+                                    if (type.length() != 0) {
 
-                if(userNameUI.length() != 0){
-                    if(userNameUI.length() != 0){
-                        if(monthUI.length() != 0){
-                            if(amountUI.length() != 0){
+                                        FeeDTO dto = new FeeDTO();
+                                        dto.setStudentId(userIDUI);
+                                        dto.setStudentName(userNameUI);
+                                        dto.setYear(Integer.parseInt(yearUI));
+                                        dto.setAmount(Double.parseDouble(amountUI));
+                                        dto.setMonth(monthUI);
+                                        dto.setType(type);
 
-                                FeeDTO dto = new FeeDTO();
-                                dto.setStudentId(userIDUI);
-                                dto.setStudentName(userNameUI);
-                                dto.setYear(Integer.parseInt(yearUI));
-                                dto.setAmount(Double.parseDouble(amountUI));
-                                dto.setMonth(monthUI);
-                                dto.setType(type);
-
-                                boolean f =db.SaveFeeDetails(dto);
-                                if(f){
-                                    StyleableToast.makeText(getActivity(), " Added SuccessFully",R.style.mytoastSuccess).show();
-
-                                }else{
-
-                                    StyleableToast.makeText(getActivity(), "Added Fail",R.style.mytoast).show();
-
-
+                                        boolean f = db.SaveFeeDetails(dto);
+                                        if (f) {
+                                            StyleableToast.makeText(getActivity(), " Added SuccessFully", R.style.mytoastSuccess).show();
+                                        } else {
+                                            StyleableToast.makeText(getActivity(), "Added Fail", R.style.mytoast).show();
+                                        }
+                                    } else {
+                                        StyleableToast.makeText(getActivity(), "Empty Type", R.style.mytoast).show();
+                                    }
+                                } else {
+                                    StyleableToast.makeText(getActivity(), "Empty Amount", R.style.mytoast).show();
                                 }
-
-
+                            } else {
+                                StyleableToast.makeText(getActivity(), "Empty Month", R.style.mytoast).show();
                             }
-                            else{
-
-                                StyleableToast.makeText(getActivity(), "Empty Name",R.style.mytoast).show();
-
-                            }
-                        }else{
-                            StyleableToast.makeText(getActivity(), "Empty month",R.style.mytoast).show();
-
+                        } else {
+                            StyleableToast.makeText(getActivity(), "Please enter a valid Year", R.style.mytoast).show();
                         }
-                    }else{
-                        StyleableToast.makeText(getActivity(), "Empty amount",R.style.mytoast).show();
-
+                    } else {
+                        StyleableToast.makeText(getActivity(), "Empty Year", R.style.mytoast).show();
                     }
+                } else {
+                    StyleableToast.makeText(getActivity(), "Empty Name", R.style.mytoast).show();
                 }
+            }else {
+                StyleableToast.makeText(getActivity(), "Empty StudentID", R.style.mytoast).show();
             }
-        });
+            }
+            });
 
 
 
@@ -143,9 +145,7 @@ public class AddFeeDetails extends Fragment {
         return v;
 
 
-
-
-
+        }
     }
 
-}
+
