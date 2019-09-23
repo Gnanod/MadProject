@@ -15,7 +15,8 @@ import Model.FeeDTO;
 
 public class DBHandlerFeeManagement extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "GuruApp2.db";
+
+    public static final String DATABASE_NAME = "GuruApp3.db";
 
     public DBHandlerFeeManagement(Context context){
         super(context, DATABASE_NAME, null, 1);
