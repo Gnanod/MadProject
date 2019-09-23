@@ -25,7 +25,7 @@ public class DBHandlerFeeManagement extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String SQL_CREATE_ENTRIES =
                 "CREATE TABLE " + Fee.FeeDetail.TABLE_NAME + " ("+
-                        Fee.FeeDetail.COLUMN_NAME_STUDENTID + " Text," +
+                        Fee.FeeDetail.COLUMN_NAME_STUDENTID + " Text PRIMARY KEY," +
                         Fee.FeeDetail.COLUMN_NAME_STUDENTNAME + " Text," +
                         Fee.FeeDetail.COLUMN_NAME_YEAR + " INTEGER," +
                         Fee.FeeDetail.COLUMN_NAME_MONTH + " Text," +

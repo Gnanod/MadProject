@@ -105,16 +105,14 @@ public class StudentProfile extends AppCompatActivity
 
         }else if(id == R.id.nav_profileDetails){
 
-
-
             getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails, new ViewStudentProfile(studentId)).commit();
-
 
         }else if(id == R.id.nav_search_fee_details){
 
             getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails,new SearchFeeDetails()).commit();
 
         }else if(id == R.id.nav_logOut){
+
             Intent login = new Intent(this, Login.class);
             startActivity(login);
         }

@@ -27,7 +27,6 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
@@ -39,8 +38,38 @@ public class DBHelper extends SQLiteOpenHelper {
                 ExamMarks.Marks.Student_Center+" Text,"+
                 ExamMarks.Marks.Student_Marks+" Real)";
 
-        sqLiteDatabase.execSQL(CreateExamMarksTableSQL);
 
+        String SQL_CREATE_ENTRIES =
+                "CREATE TABLE " + Fee.FeeDetail.TABLE_NAME + " ("+
+                        Fee.FeeDetail.COLUMN_NAME_STUDENTID + " Text PRIMARY KEY," +
+                        Fee.FeeDetail.COLUMN_NAME_STUDENTNAME + " Text," +
+                        Fee.FeeDetail.COLUMN_NAME_YEAR + " INTEGER," +
+                        Fee.FeeDetail.COLUMN_NAME_MONTH + " Text," +
+                        Fee.FeeDetail.COLUMN_NAME_AMOUNT + " Real," +
+                        Fee.FeeDetail.COLUMN_NAME_TYPE + " Text)";
+
+        String sqlCreateTable = "CREATE TABLE "+UserMaster.users.TABLE_NAME+" ("+
+                UserMaster.users._ID+" TEXT PRIMARY KEY,"+
+                UserMaster.users.COLUMN_NAME+ " TEXT,"+
+                UserMaster.users.COLUMN_PHONE+ " TEXT," +
+                UserMaster.users.COLUMN_MAIL+ " TEXT," +
+                UserMaster.users.COLUMN_SUBJECT+ " TEXT," +
+                UserMaster.users.COLUMN_PASSWORD+" TEXT)";
+
+
+        String sqlCreateTable1 = "CREATE TABLE "+Student.student.TABLE_NAME+" ("+
+                Student.student.COLUMN_STUDENT_ID+ " TEXT,"+
+                Student.student.COLUMN_STUDENT_Name+ " TEXT,"+
+                Student.student.COLUMN_STUDENT_NIC+ " TEXT," +
+                Student.student.COLUMN_STUDENT_PHONE+ " TEXT," +
+                Student.student.COLUMN_STUDENT_EMAIL+" TEXT)";
+
+
+
+        sqLiteDatabase.execSQL(CreateExamMarksTableSQL);
+        sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
+        sqLiteDatabase.execSQL(sqlCreateTable);
+        sqLiteDatabase.execSQL(sqlCreateTable1);
 
     }
 
