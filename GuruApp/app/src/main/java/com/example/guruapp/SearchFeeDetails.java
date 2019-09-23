@@ -199,6 +199,7 @@ public class SearchFeeDetails extends Fragment {
                     if (UpdateStName.length() != 0) {
                         if (UpdateYear.length() != 0) {
                             if (UpdateYear.length() == 4) {
+
                                 if (UpdateMonth.length() != 0) {
                                     if (UpdateAmount.length() != 0) {
                                         if (spinnerType.length() != 0) {
@@ -217,6 +218,10 @@ public class SearchFeeDetails extends Fragment {
                                             if(status){
                                                 //Toast.makeText(getActivity(),"Update Success",Toast.LENGTH_LONG).show();
                                                 StyleableToast.makeText(getActivity(), "Updated SuccessFully",R.style.mytoast).show();
+                                                    UpStName.setText(" ");
+                                                    UpYear.setText(" ");
+                                                    UpMonth.setText(" ");
+                                                    UpAmount.setText(" ");
 
                                             }else{
 
