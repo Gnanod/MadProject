@@ -17,7 +17,7 @@ import Model.StudentDTO;
 public class DBHelper extends SQLiteOpenHelper {
 
 
-    private  static final String DATABASE_NAME = "GuruApp2.db";
+    private  static final String DATABASE_NAME = "GuruApp3.db";
 
 
     public DBHelper(Context context) {

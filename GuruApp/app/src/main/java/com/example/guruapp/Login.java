@@ -37,12 +37,14 @@ public class Login extends AppCompatActivity {
         }else{
 
             String s1 = db.LoginFunction(userName,password);
+            System.out.println("KKKKKKKKKKKKKKKKKKKK"+s1);
 
             if(s1!=null){
 
                 Intent student  = new Intent(this,StudentProfile.class);
-                startActivity(student);
                 student.putExtra("studentId",s1);
+                startActivity(student);
+
 
             }else{
 
