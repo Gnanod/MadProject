@@ -78,8 +78,7 @@
         android:id="@+id/btnSearch"
 
         android:background="@drawable/ic_rounded_corner_button"
-        android:drawableStart="@drawable/ic_search_user_icon_24dp"
-        android:paddingStart="50dp"
+
 
         android:textColor="@android:color/black"
 
