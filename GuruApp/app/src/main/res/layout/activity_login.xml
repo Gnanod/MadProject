@@ -34,7 +34,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="24dp"
 
-            android:hint="@string/StudentID"
+            android:hint="@string/hint_userNic"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             android:textColor="#212121"

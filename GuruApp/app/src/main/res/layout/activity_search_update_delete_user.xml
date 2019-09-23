@@ -42,14 +42,16 @@
             android:inputType="textPersonName" />
 
         <Button
+            android:drawableEnd="@drawable/ic_search_user_icon_24dp"
             android:id="@+id/searchUserH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_width="47dp"
+            android:layout_height="52dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="-55dp"
+            android:layout_marginRight="15dp"
             android:ems="10"
-            android:background="@color/btnColor"
-            android:text="@string/buttonsearch" />
+            android:background="@drawable/ic_rounded_corner_button"
+             />
 
 
         <TextView
@@ -140,10 +142,12 @@
         <EditText
             android:id="@+id/editpswdH"
             android:layout_width="250dp"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="-30dp"
             android:ems="10"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/Black"
             android:inputType="textPassword" />
 
         <Button
@@ -153,7 +157,7 @@
             android:layout_gravity="left"
             android:layout_marginTop="32dp"
             android:layout_marginLeft="80dp"
-            android:background="@color/btnColor"
+            android:background="@drawable/ic_rounded_corner_button"
             android:text="@string/buttonupdate"
             android:textStyle="bold" />
 
@@ -165,7 +169,7 @@
             android:layout_marginTop="-50dp"
             android:layout_marginRight="80dp"
             android:text="@string/buttondelete"
-            android:background="@color/btnColor"
+            android:background="@drawable/ic_rounded_corner_button"
             android:textStyle="bold" />
 
     </LinearLayout>

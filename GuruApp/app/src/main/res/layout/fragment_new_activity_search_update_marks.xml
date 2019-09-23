@@ -73,9 +73,8 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="131dp"
             android:layout_marginBottom="310dp"
-            android:background="@color/btnColor"
-
-            android:drawableLeft="@drawable/ic_search_marks"
+            android:background="@drawable/ic_rounded_corner_button"
+            android:drawableEnd="@drawable/ic_search_marks"
 
             />
 

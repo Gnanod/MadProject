@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.muddzdev.styleabletoast.StyleableToast;
-
 import java.util.InputMismatchException;
 
 import Database.DBHelperUser;
@@ -87,10 +85,7 @@ public class AddUser extends Fragment {
                                             boolean res = db.addUser(dto);
 
                                             if (res){
-//                                                Toast.makeText(getActivity(), "User Added SuccessFully", Toast.LENGTH_SHORT).show();
-
-                                                StyleableToast.makeText(getActivity(), "User Added SuccessFully",R.style.mytoastSuccess).show();
-
+                                                Toast.makeText(getActivity(), "User Added SuccessFully", Toast.LENGTH_SHORT).show();
                                                 txt_uid.setText(" ");
                                                 txt_username.setText(" ");
                                                 txt_phone.setText(" ");
@@ -99,37 +94,28 @@ public class AddUser extends Fragment {
                                                 txt_password.setText(" ");
 
                                             }else {
-
-                                                StyleableToast.makeText(getActivity(), "User Added Fail",R.style.mytoast).show();
-
+                                                Toast.makeText(getActivity(), "User Added Fail", Toast.LENGTH_SHORT).show();
                                             }
                                         }catch (InputMismatchException s){
-                                            StyleableToast.makeText(getActivity(), "Invalid Inputs",R.style.mytoast).show();
-
+                                            Toast.makeText(getActivity(), "Invalid Inputs", Toast.LENGTH_SHORT).show();
                                         }
                                     }else{
-                                        StyleableToast.makeText(getActivity(), "Password is required",R.style.mytoast).show();
-
+                                        Toast.makeText(getActivity(), "Password is required", Toast.LENGTH_SHORT).show();
                                     }
                                 }else{
-                                    StyleableToast.makeText(getActivity(), "Subject is required",R.style.mytoast).show();
-
+                                    Toast.makeText(getActivity(), "Subject is required", Toast.LENGTH_SHORT).show();
                                 }
                             }else{
-                                StyleableToast.makeText(getActivity(), "E-mail is required",R.style.mytoast).show();
-
+                                Toast.makeText(getActivity(), "E-mail is required", Toast.LENGTH_SHORT).show();
                             }
                         }else{
-                            StyleableToast.makeText(getActivity(), "Phone Number Is Incorrect",R.style.mytoast).show();
-
+                            Toast.makeText(getActivity(), "Phone Number Is Incorrect", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        StyleableToast.makeText(getActivity(), "User Name is required",R.style.mytoast).show();
-
+                        Toast.makeText(getActivity(), "User Name is required", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    StyleableToast.makeText(getActivity(), "User ID is required",R.style.mytoast).show();
-
+                    Toast.makeText(getActivity(), "User ID is required", Toast.LENGTH_SHORT).show();
                 }
             }
         });
