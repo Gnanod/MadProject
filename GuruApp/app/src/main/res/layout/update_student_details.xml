@@ -18,7 +18,7 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="357dp"
+        android:layout_width="277dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
@@ -29,12 +29,16 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="47dp"
-        android:layout_height="52dp"
-        android:layout_marginLeft="350dp"
-        android:layout_marginTop="-60dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="-50dp"
         android:background="@drawable/ic_rounded_corner_button"
-        android:drawableEnd="@drawable/ic_search_marks" />
+
+
+        android:drawableStart="@drawable/searchtn"
+        android:paddingStart="20dp"
+        android:layout_width="75dp"
+        android:layout_height="48dp"
+        />
 
     <EditText
         android:id="@+id/name"

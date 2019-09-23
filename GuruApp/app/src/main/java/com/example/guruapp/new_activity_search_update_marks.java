@@ -17,6 +17,7 @@ import android.widget.Spinner;
 
 import com.muddzdev.styleabletoast.StyleableToast;
 
+import java.util.InputMismatchException;
 import java.util.List;
 
 import Database.DBHelper;
@@ -178,29 +179,79 @@ public class new_activity_search_update_marks extends Fragment {
               String updateExamId = updateExamIdObject.getText().toString();
               String updateExamMarkss = updateExamMarksObject.getText().toString();
 
-              ExamMarkDTO e = new ExamMarkDTO();
-              e.setMarkId(Integer.parseInt(updateId.trim()));
-              e.setStudent_Id(updateStudentIds);
-              e.setExam_ID(updateExamId);
-              e.setStudent_Marks(Double.parseDouble(updateExamMarkss));
-
-              boolean i = db.updateMarks(e);
-
-              if(i){
-
-                  StyleableToast.makeText(getActivity(), "Updated  SuccessFully",R.style.mytoastSuccess).show();
-
-                  id.setText(" ");
-                  txtupdateExamId.setText(" ");
-                  updateStudentId.setText(" ");
-                  updateExamMarks.setText(" ");
 
 
+
+
+
+              if(updateId.length() != 0){
+                  if(updateStudentIds.length() !=0){
+                      if(updateExamId.length() !=0){
+                          if(updateExamMarkss.length() !=0){
+
+                              try{
+
+
+                                  ExamMarkDTO e = new ExamMarkDTO();
+                                  e.setMarkId(Integer.parseInt(updateId.trim()));
+                                  e.setStudent_Id(updateStudentIds);
+                                  e.setExam_ID(updateExamId);
+                                  e.setStudent_Marks(Double.parseDouble(updateExamMarkss));
+
+
+                                  boolean i = db.updateMarks(e);
+
+                                  if(i){
+
+                                      StyleableToast.makeText(getActivity(), "Updated  SuccessFully",R.style.mytoastSuccess).show();
+
+                                      id.setText(" ");
+                                      txtupdateExamId.setText(" ");
+                                      updateStudentId.setText(" ");
+                                      updateExamMarks.setText(" ");
+
+
+                                  }else{
+
+                                      StyleableToast.makeText(getActivity(), "Deleted  Fail",R.style.mytoastSuccess).show();
+
+                                  }
+
+                              }catch (InputMismatchException s){
+
+                                  StyleableToast.makeText(getActivity(), "Mark Is Invalid",R.style.mytoast).show();
+
+                              }catch (NumberFormatException s){
+
+                                  StyleableToast.makeText(getActivity(), "Marks Is Invalid,It is Not A Number",R.style.mytoast).show();
+
+                              }
+
+
+                          }else{
+
+                              StyleableToast.makeText(getActivity(), "Student Marks Field Is Empty",R.style.mytoast).show();
+
+                          }
+
+                      }else{
+
+                          StyleableToast.makeText(getActivity(), "Exam Id Field Is Empty",R.style.mytoast).show();
+
+                      }
+                  }else{
+
+                      StyleableToast.makeText(getActivity(), "Student Id Field Is Empty",R.style.mytoast).show();
+
+                  }
               }else{
 
-                  StyleableToast.makeText(getActivity(), "Deleted  Fail",R.style.mytoastSuccess).show();
+                  StyleableToast.makeText(getActivity(), "Id Field Is Empty",R.style.mytoast).show();
 
               }
+
+
+
 
            }
        });
@@ -208,7 +259,14 @@ public class new_activity_search_update_marks extends Fragment {
 
 
 
+
+
+
     }
 
 //inflater.inflate(R.layout.fragment_new_activity_search_update_marks, container, false);
 }
+
+
+
+

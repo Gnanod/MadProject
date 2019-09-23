@@ -29,7 +29,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp">
+        android:layout_height="62dp">
 
         <Spinner
             android:id="@+id/centSpinner"
@@ -43,14 +43,17 @@
             />
         <Button
             android:id="@+id/btnSearch"
-            android:layout_width="47dp"
-            android:layout_height="52dp"
+
             android:layout_marginStart="-33dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="131dp"
             android:layout_marginBottom="310dp"
             android:background="@drawable/ic_rounded_corner_button"
-            android:drawableEnd="@drawable/ic_search_marks"
+            android:drawableStart="@drawable/searchtn"
+            android:paddingStart="20dp"
+            android:layout_width="75dp"
+            android:layout_height="48dp"
+
             />
 
 
