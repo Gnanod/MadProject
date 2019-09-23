@@ -127,7 +127,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
             ExamMarkDTO d = new ExamMarkDTO();
 
-            d.setStudent_Id(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Exam_ID)));
+            d.setStudent_Id(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Id)));
             d.setStudent_Center(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Center)));
             double marks = Double.parseDouble(cursor.getString(cursor.getColumnIndexOrThrow(ExamMarks.Marks.Student_Marks)));
             d.setStudent_Marks(marks);
