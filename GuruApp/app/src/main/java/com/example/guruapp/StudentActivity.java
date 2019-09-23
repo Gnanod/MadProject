@@ -82,16 +82,13 @@ public class StudentActivity extends AppCompatActivity
             startActivity(home);
 
         }else if(id == R.id.nav_add_students) {
-
             getSupportFragmentManager().beginTransaction().replace(R.id.student_main, new AddStudents()).commit();
 
 
         }else if(id == R.id.nav_search_students) {
-
             getSupportFragmentManager().beginTransaction().replace(R.id.student_main, new SearchStudent()).commit();
 
         }else if(id == R.id.nav_update_students){
-
             getSupportFragmentManager().beginTransaction().replace(R.id.student_main,new UpdateStudent()).commit();
 
 

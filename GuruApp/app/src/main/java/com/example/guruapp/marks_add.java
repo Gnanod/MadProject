@@ -86,54 +86,39 @@ public class marks_add extends Fragment {
 
                         if(examStudentIdMarks.length() != 0){
 
-                            if(Double.parseDouble(examMarksValues) <=100){
+                            try{
 
 
-
-                                try{
-
-
-                                    ExamMarkDTO dto = new ExamMarkDTO();
-                                    dto.setExam_ID(examIdValues);
-                                    dto.setStudent_Marks(Double.parseDouble(examMarksValues));
-                                    dto.setStudent_Center(examCenterValue);
-                                    dto.setStudent_Id(examStudentIdMarks);
+                                ExamMarkDTO dto = new ExamMarkDTO();
+                                dto.setExam_ID(examIdValues);
+                                dto.setStudent_Marks(Double.parseDouble(examMarksValues));
+                                dto.setStudent_Center(examCenterValue);
+                                dto.setStudent_Id(examStudentIdMarks);
 
 
-                                    boolean i =db.SaveMarkDetails(dto);
+                                boolean i =db.SaveMarkDetails(dto);
 
-                                    if(i){
+                                if(i){
 
-                                        StyleableToast.makeText(getActivity(), "Marks Added SuccessFully",R.style.mytoastSuccess).show();
+                                    StyleableToast.makeText(getActivity(), "Marks Added SuccessFully",R.style.mytoastSuccess).show();
 
-                                        txtExamId.setText(" ");
-                                        txtMarks.setText(" ");
-                                        txtStudentId.setText(" ");
+                                    txtExamId.setText(" ");
+                                    txtMarks.setText(" ");
+                                    txtStudentId.setText(" ");
 
-                                    }else{
+                                }else{
 
-                                        StyleableToast.makeText(getActivity(), "Marks Added Fail",R.style.mytoast).show();
-
-                                    }
-
-                                }catch (InputMismatchException s){
-
-                                    StyleableToast.makeText(getActivity(), "Mark Is Invalid",R.style.mytoast).show();
-
-                                }catch (NumberFormatException s){
-
-                                    StyleableToast.makeText(getActivity(), "Marks Is Invalid,It is Not A Number",R.style.mytoast).show();
+                                    StyleableToast.makeText(getActivity(), "Marks Added Fail",R.style.mytoast).show();
 
                                 }
 
+                            }catch (InputMismatchException s){
 
-                            }else{
+                                StyleableToast.makeText(getActivity(), "Mark Is Invalid",R.style.mytoast).show();
 
-                                if(Double.parseDouble(examMarksValues) >100){
+                            }catch (NumberFormatException s){
 
-                                    StyleableToast.makeText(getActivity(), "Invalid Marks(>100),Please Input Valid Marks",R.style.mytoast).show();
-
-                                }
+                                StyleableToast.makeText(getActivity(), "Marks Is Invalid,It is Not A Number",R.style.mytoast).show();
 
                             }
 
