@@ -103,6 +103,7 @@ public class FeesManagement extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.Fess_Management_content_main,new UpdateFeeDetails()).commit();
 
         }else if(id == R.id.nav_logOut){
+
             Intent login  = new Intent(this,Login.class);
             startActivity(login);
 

@@ -99,6 +99,8 @@ public class StudentProfile extends AppCompatActivity
 
             getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails, new ViewStudentProfile()).commit();
 
+
+
         }else if(id == R.id.nav_search_fee_details){
 
             getSupportFragmentManager().beginTransaction().replace(R.id.user_profileDetails,new SearchFeeDetails()).commit();
