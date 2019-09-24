@@ -109,6 +109,14 @@ public class UpdateStudent extends Fragment {
 
                 if (res) {
                     StyleableToast.makeText(getActivity(), "Successfully Updated", R.style.mytoastSuccess).show();
+
+                    stuName.setText(null);
+                    stuNic.setText(null);
+                    stuPhone.setText(null);
+                    stuEmail.setText(null);
+                    id.setText(null);
+
+
                 } else {
                     StyleableToast.makeText(getActivity(), "Updated Fail", R.style.mytoastSuccess).show();
                 }
@@ -126,6 +134,13 @@ public class UpdateStudent extends Fragment {
 
                 if (result > 0) {
                     StyleableToast.makeText(getActivity(), "Deleted Successfully", R.style.mytoastSuccess).show();
+
+                    stuName.setText(" ");
+                    stuNic.setText(" ");
+                    stuPhone.setText(" ");
+                    stuEmail.setText(" ");
+                    id.setText(" ");
+
                 } else {
                     StyleableToast.makeText(getActivity(), "Deleted Fail", R.style.mytoastSuccess).show();
                 }

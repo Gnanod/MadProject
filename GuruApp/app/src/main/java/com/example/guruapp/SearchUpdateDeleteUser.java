@@ -116,6 +116,14 @@ public class SearchUpdateDeleteUser extends Fragment {
 
                 if (res){
                     StyleableToast.makeText(getActivity(), "Updated SuccessFully",R.style.mytoastSuccess).show();
+
+                    txt_name.setText(" ");
+                    txt_phn.setText(" ");
+                    txt_mail.setText(" ");
+                    txt_sub.setText(" ");
+                    txt_pswd.setText(" ");
+
+
                 }else {
                     StyleableToast.makeText(getActivity(), "Updated Fail",R.style.mytoast).show();
                 }
@@ -133,6 +141,14 @@ public class SearchUpdateDeleteUser extends Fragment {
 
                 if (res){
                     StyleableToast.makeText(getActivity(), "Deleted SuccessFully",R.style.mytoastSuccess).show();
+
+                    txt_name.setText(" ");
+                    txt_phn.setText(" ");
+                    txt_mail.setText(" ");
+                    txt_sub.setText(" ");
+                    txt_pswd.setText(" ");
+
+
                 }else {
                     StyleableToast.makeText(getActivity(), "Deleted Fail",R.style.mytoast).show();
                 }

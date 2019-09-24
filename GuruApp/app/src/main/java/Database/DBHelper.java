@@ -58,6 +58,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         String sqlCreateTable1 = "CREATE TABLE "+Student.student.TABLE_NAME+" ("+
+
                 Student.student.COLUMN_STUDENT_ID+ " TEXT,"+
                 Student.student.COLUMN_STUDENT_Name+ " TEXT,"+
                 Student.student.COLUMN_STUDENT_NIC+ " TEXT," +

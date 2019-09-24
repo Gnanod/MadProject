@@ -90,6 +90,7 @@ public class marks_add extends Fragment {
 
 
                                 ExamMarkDTO dto = new ExamMarkDTO();
+
                                 dto.setExam_ID(examIdValues);
                                 dto.setStudent_Marks(Double.parseDouble(examMarksValues));
                                 dto.setStudent_Center(examCenterValue);

@@ -266,6 +266,12 @@ public class SearchFeeDetails extends Fragment {
                     //Toast.makeText(getActivity(),"Deleting Success",Toast.LENGTH_LONG).show();
                     StyleableToast.makeText(getActivity(), " Deleted SuccessFully",R.style.mytoast).show();
 
+                    UpStName.setText(" ");
+                    UpYear.setText(" ");
+                    UpMonth.setText(" ");
+                    UpAmount.setText(" ");
+
+
                 }else{
 
                     //Toast.makeText(getActivity(),"Deleting  false",Toast.LENGTH_LONG).show();

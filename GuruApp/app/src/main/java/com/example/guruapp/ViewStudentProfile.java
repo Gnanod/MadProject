@@ -65,7 +65,7 @@ public class ViewStudentProfile extends Fragment {
     public void getDetails(){
 
 
-        System.out.println("KKKKKKKKKKKKKKKKKKKKKKKKKKKDDDDDDDDDDDDDDDDDDDDDDD");
+
         ///String nic = studNic.getText().toString();
 
         List<StudentDTO> s = db.getDetails(studentId);

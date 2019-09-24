@@ -56,8 +56,8 @@ public class StudentProfile extends AppCompatActivity
 
 
         Intent intent = getIntent();
-         studentId = intent.getStringExtra("studentId");
-        System.out.println("HHHHHH"+studentId);
+        studentId = intent.getStringExtra("studentId");
+
     }
 
     @Override

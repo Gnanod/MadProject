@@ -87,7 +87,6 @@ public class AddFeeDetails extends Fragment {
             public void onClick(View view) {
                 userIDUI = userID.getText().toString();
                 userNameUI = userName.getText().toString();
-
                 monthUI = month.getText().toString();
                 amountUI = amount.getText().toString();
                 yearUI = year.getText().toString();
@@ -112,6 +111,13 @@ public class AddFeeDetails extends Fragment {
                                             boolean f = db.SaveFeeDetails(dto);
                                             if (f) {
                                                 StyleableToast.makeText(getActivity(), " Added SuccessFully", R.style.mytoastSuccess).show();
+
+                                                userID.setText(" ");
+                                                userName.setText(" ");
+                                                month.setText(" ");
+                                                amount.setText(" ");
+                                                year.setText(" ");
+
                                             } else {
                                                 StyleableToast.makeText(getActivity(), "Added Fail", R.style.mytoast).show();
                                             }
